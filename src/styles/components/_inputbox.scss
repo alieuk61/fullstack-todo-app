@@ -1,0 +1,30 @@
+@use '../base/_variables.scss' as vars;
+@use '../base/_mixins.scss' as mixins;
+
+.input-div{
+    width: 100%;
+    height: 64px;
+    background-color: var(--list-background-color);
+    border-radius: 5px;
+    padding: 20px;
+    @include mixins.flexbox-center;
+    gap: 20px;
+
+    button{
+        height: 24px;
+        width: 24px;
+        border-radius: 100%;
+        border: 1px solid var(--button-border);
+        background-color: var(--list-background-color);
+    }
+
+    input{
+        width: 100%;
+        height: 100%;
+        outline: none;
+        font-size: 15px;
+        border: none;
+        color: var(--text-color);
+        background-color: inherit;
+    }
+}

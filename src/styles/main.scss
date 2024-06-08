@@ -1,0 +1,32 @@
+@import url('./base/_mixins.scss');
+@import url('./base/_typography.scss');
+@import url('./base/_variables.scss');
+@import url('./homepage/_homepage.scss');
+
+[data-theme='light'] {
+      --background-image: url('../assets/images/bg-desktop-light.jpg');
+      --background-color: #F2F2F2;
+      --text-color: #494C6B;
+      --list-background-color: white;
+      --footer-text: #9495A5;
+      --footer-active-button: #3A7CFD;
+      --button-border: hsl(236, 9%, 61%);
+    
+  }
+  
+  [data-theme='dark'] {
+      --background-image: url('../assets/images/bg-desktop-dark.jpg');
+      --background-color: hsl(235, 21%, 11%);
+      --list-background-color: #393A4B;
+      --text-color: #C8CBE7;
+      --completed-text-color: #4D5067;
+      --footer-text: #5B5E7E;
+      --footer-active-button: #3A7CFD;
+      --button-border: hsl(234, 11%, 52%); 
+  }
+
+  main{
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+

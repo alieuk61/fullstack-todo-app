@@ -1,0 +1,13 @@
+@mixin justify-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin clickable{
+    cursor: pointer;
+}
+
+@mixin flexbox-center{
+    display: flex;
+    align-items: center;
+}

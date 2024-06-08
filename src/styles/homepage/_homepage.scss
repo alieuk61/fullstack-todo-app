@@ -1,0 +1,124 @@
+@use '../base/_variables.scss' as vars;
+@use '../base/_mixins.scss' as mixins;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.homepage{
+
+        .active{
+            color: vars.$bright-blue;
+        }
+
+        .header{
+            width: 100%;
+            height: 300px;
+            background-image: var(--background-image);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+    
+            div{
+                width: 541px;
+                height: 48px;
+                @include mixins.justify-between;
+                align-items: center;
+                margin-top: 80px;
+    
+                h1{
+                    color: white;
+                    text-transform: uppercase;
+                }
+    
+                span{
+                    cursor: pointer;
+                    height: fit-content;
+                }
+            }
+        }
+    
+        .todo-list{
+            position: absolute;
+            left: auto;
+            width: 541px;
+            min-height: fit-content;
+            margin: auto;
+            top: 160px;
+            left: 0;
+            right: 0;
+            display: grid;
+            gap: 20px;
+
+            .todos{
+                border-radius: 5px;
+                overflow: hidden;
+                min-height: fit-content;
+                box-shadow: 5px 5px 25px;
+
+                .todo{
+                    height: 64px;
+                    background-color: var(--list-background-color);
+                    color: var(--text-color);
+                    border-bottom: 1px solid;
+                    @include mixins.flexbox-center;
+                    padding: 20px;
+                    justify-content: space-between;
+
+                    button{
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 100%;
+                        border: 1px solid var(--button-border);
+                        background-color: var(--list-background-color);
+                    }
+
+                    .cross-icon{
+                        visibility: hidden;
+                        transition: visibility 1s ease-in-out;
+                    }
+
+                    .checked{
+                        background: url('src/assets/images/icon-check.svg'), linear-gradient(310deg, vars.$violet 35%, vars.$neon-green 65%);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+
+                }
+
+                .todo:hover{
+
+                    .cross-icon{
+                        visibility: visible;
+                    }
+                }
+
+                .footer{
+                    height: 45px;
+                    background-color: var(--list-background-color);
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 15px 20px;
+                    color: var(--footer-text);
+
+                    // .todo-length{
+
+                    // }
+
+                    .dynamic-page-buttons{
+                        display: flex;
+                        gap: 15px;
+                        @include mixins.clickable;
+                    }
+
+                    .clear-completed{
+                        @include mixins.clickable;
+                    }
+                }
+            }
+        }
+}
